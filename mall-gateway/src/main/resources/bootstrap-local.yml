@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://localhost:8848
+      config:
+        server-addr: http://localhost:8848
+        file-extension: yaml
+    sentinel:
+      transport:
+        dashboard: localhost:6060
+      enabled: true
+#      scg:
+#        fallback: #自定义异常
+#          response-body: '{"code":403,"mes":"当前用户过多"}'
+#          mode: response
