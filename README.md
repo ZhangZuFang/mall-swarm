@@ -51,7 +51,7 @@
 ![业务架构图](./document/resource/re_mall_business_arch.jpg)
 
 ### 组织结构
-
+prefrenceArea/listAll
 ``` lua
 mall
 ├── mall-common -- 工具类及通用代码模块

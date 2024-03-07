@@ -6,12 +6,13 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - /mydata/app/mall-admin/logs:/var/logs
-      - /etc/localtime:/etc/localtime
+      - D:\project\tools\mallDeploy\dockerDir\mydata\app\mall-admin\logs:/var/logs
+      #- /etc/localtime:/etc/localtime
     environment:
       - 'TZ="Asia/Shanghai"'
     external_links:
-      - mysql:db #可以用db这个域名访问mysql服务
+      #- mysql:db #可以用db这个域名访问mysql服务
+      - mysql:db
       - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
   mall-search:
     image: mall/mall-search:1.0-SNAPSHOT
@@ -19,8 +20,8 @@ services:
     ports:
       - 8081:8081
     volumes:
-      - /mydata/app/mall-search/logs:/var/logs
-      - /etc/localtime:/etc/localtime
+      - D:\project\tools\mallDeploy\dockerDir\mydata\app\mall-search\logs:/var/logs
+      #- /etc/localtime:/etc/localtime
     environment:
       - 'TZ="Asia/Shanghai"'
     external_links:
@@ -33,8 +34,8 @@ services:
     ports:
       - 8085:8085
     volumes:
-      - /mydata/app/mall-portal/logs:/var/logs
-      - /etc/localtime:/etc/localtime
+      - D:\project\tools\mallDeploy\dockerDir\mydata\app\mall-portal\logs:/var/logs
+      #- /etc/localtime:/etc/localtime
     environment:
       - 'TZ="Asia/Shanghai"'
     external_links:
@@ -49,8 +50,8 @@ services:
     ports:
       - 8401:8401
     volumes:
-      - /mydata/app/mall-auth/logs:/var/logs
-      - /etc/localtime:/etc/localtime
+      - D:\project\tools\mallDeploy\dockerDir\mydata\app\mall-auth\logs:/var/logs
+      #- /etc/localtime:/etc/localtime
     environment:
       - 'TZ="Asia/Shanghai"'
     external_links:
@@ -61,21 +62,21 @@ services:
     ports:
       - 8201:8201
     volumes:
-      - /mydata/app/mall-gateway/logs:/var/logs
-      - /etc/localtime:/etc/localtime
+      - D:\project\tools\mallDeploy\dockerDir\mydata\app\mall-gateway\logs:/var/logs
+      #- /etc/localtime:/etc/localtime
     environment:
       - 'TZ="Asia/Shanghai"'
     external_links:
       - redis:redis #可以用redis这个域名访问redis服务
       - nacos-registry:nacos-registry #可以用nacos-registry这个域名访问nacos服务
   mall-monitor:
-    image: mall/mall-monitor:1.0-SNAPSHOTnginx.conf
+    image: mall/mall-monitor:1.0-SNAPSHOT
     container_name: mall-monitor
     ports:
       - 8101:8101
     volumes:
-      - /mydata/app/mall-monitor/logs:/var/logs
-      - /etc/localtime:/etc/localtime
+      - D:\project\tools\mallDeploy\dockerDir\mydata\app\mall-monitor\logs:/var/logs
+      #- /etc/localtime:/etc/localtime
     environment:
       - 'TZ="Asia/Shanghai"'
     external_links:
